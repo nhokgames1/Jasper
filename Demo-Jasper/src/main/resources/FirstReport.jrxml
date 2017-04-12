@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-04-12T16:46:38 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FirstReport" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f46722ed-3ffc-4efe-9d1f-69d2ad24d3ab">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="CardDB"/>
+	<queryString language="SQL">
+		<![CDATA[Select Card.id,Card.owner,Card.class,Card.number,Card.valid,Card.expire
+From card Card]]>
+	</queryString>
+	<field name="id" class="java.lang.Long"/>
+	<field name="owner" class="java.lang.String"/>
+	<field name="class" class="java.lang.String"/>
+	<field name="number" class="java.lang.String"/>
+	<field name="valid" class="java.sql.Date"/>
+	<field name="expire" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="822" height="66" uuid="b94825ac-5513-463d-b67e-55c9289eeace"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Card Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="89" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-10" y="10" width="832" height="60" forecolor="#000000" backcolor="#FFFFFF" uuid="aec31fa5-5a72-4998-9907-5903bb03a350"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="10" width="70" height="55" backcolor="#FFFFFF" uuid="9f470017-34bd-41f5-9675-b34fec2cb4f9">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="10" width="70" height="55" backcolor="#FFFFFF" uuid="3c2dd077-dab0-4c71-97e4-4759335de157"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{owner}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="8" width="60" height="55" backcolor="#FFFFFF" uuid="c9de63e3-a253-401e-ac80-d501d7acf0d5"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{class}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="10" width="70" height="55" backcolor="#FFFFFF" uuid="2724ea0d-8861-4f48-8063-7e29cfcb5edf"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{number}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="10" width="70" height="55" backcolor="#FFFFFF" uuid="f41b54ca-9b76-4118-91e6-af9b8f53fcb5"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{valid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="490" y="14" width="80" height="55" backcolor="#FFFFFF" uuid="dc2d9c2f-2154-4694-91a6-eba5dfbe3a27"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{expire}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="144" splitType="Stretch">
+			<textField>
+				<reportElement x="370" y="114" width="100" height="30" uuid="56025957-a516-4898-bb7d-72b212d1bebd"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
